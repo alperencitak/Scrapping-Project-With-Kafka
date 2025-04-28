@@ -1,0 +1,48 @@
+services:
+  zookeeper-server:
+    image: bitnami/zookeeper:latest
+    container_name: zookeeper-server
+    networks:
+      - scrapping-project
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+    restart: unless-stopped
+
+  kafka-server:
+    image: bitnami/kafka:latest
+    container_name: kafka-server
+    networks:
+      - scrapping-project
+    environment:
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+      KAFKA_CFG_PROCESS_ROLES: "controller,broker"
+      KAFKA_CFG_NODE_ID: "1"
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: "1@kafka-server:9093"
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_CFG_LISTENERS: "PLAINTEXT://:9092,CONTROLLER://:9093"
+      KAFKA_CFG_ADVERTISED_LISTENERS: "PLAINTEXT://kafka-server:9092"
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper-server
+    restart: unless-stopped
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    container_name: kafdrop
+    networks:
+      - scrapping-project
+    environment:
+      KAFKA_BROKERCONNECT: "kafka-server:9092"
+      SERVER_SERVLET_CONTEXTPATH: "/"
+    ports:
+      - "9000:9000"
+    depends_on:
+      - kafka-server
+    restart: unless-stopped
+
+networks:
+  scrapping-project:
+    name: scrapping-project
+    external: true
