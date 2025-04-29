@@ -7,20 +7,19 @@ producer = KafkaProducer(bootstrap_servers='kafka-server:9092', value_serializer
 
 def scrape_page():
     try:
-        while True:
-            response = requests.get("https://scrapeme.live/shop/")
-            soup = BeautifulSoup(response.text, 'html.parser')
+        response = requests.get("https://scrapeme.live/shop/")
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-            for product in soup.select('li.product'):
-                data = {
-                    "name": product.find('h2').text.strip(),
-                    "price": product.find('span', class_='price').text.strip(),
-                    "stock": product.find('p', class_='stock').text.strip() if product.find('p', class_='stock') else "Stok Yok",
-                    "image": product.find('img')['src']
-                }
+        for product in soup.select('li.product'):
+            data = {
+                "name": product.find('h2').text.strip(),
+                "price": product.find('span', class_='price').text.strip(),
+                "stock": product.find('p', class_='stock').text.strip() if product.find('p', class_='stock') else "Stok Yok",
+                "image": product.find('img')['src']
+            }
 
-                producer.send('scraped_products', value=data)
-                time.sleep(1)
+            producer.send('scraped_products', value=data)
+            time.sleep(1)
 
     except Exception as e:
         print(f"Error: {str(e)}")
