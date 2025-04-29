@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Bulbasaur",
+    "price": "\u00a363.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/001-350x350.png"
+  },
+  {
+    "name": "Ivysaur",
+    "price": "\u00a387.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/002-350x350.png"
+  },
+  {
+    "name": "Venusaur",
+    "price": "\u00a3105.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/003-350x350.png"
+  },
+  {
+    "name": "Charmander",
+    "price": "\u00a348.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/004-350x350.png"
+  },
+  {
+    "name": "Charmeleon",
+    "price": "\u00a3165.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/005-350x350.png"
+  },
+  {
+    "name": "Charizard",
+    "price": "\u00a3156.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/006-350x350.png"
+  },
+  {
+    "name": "Squirtle",
+    "price": "\u00a3130.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/007-350x350.png"
+  },
+  {
+    "name": "Wartortle",
+    "price": "\u00a3123.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/008-350x350.png"
+  },
+  {
+    "name": "Blastoise",
+    "price": "\u00a376.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/009-350x350.png"
+  },
+  {
+    "name": "Caterpie",
+    "price": "\u00a373.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/010-350x350.png"
+  },
+  {
+    "name": "Metapod",
+    "price": "\u00a3148.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/011-350x350.png"
+  },
+  {
+    "name": "Butterfree",
+    "price": "\u00a3162.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/012-350x350.png"
+  },
+  {
+    "name": "Weedle",
+    "price": "\u00a325.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/013-350x350.png"
+  },
+  {
+    "name": "Kakuna",
+    "price": "\u00a3148.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/014-350x350.png"
+  },
+  {
+    "name": "Beedrill",
+    "price": "\u00a3168.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/015-350x350.png"
+  },
+  {
+    "name": "Pidgey",
+    "price": "\u00a3159.00",
+    "stock": "Stok Yok",
+    "image": "https://scrapeme.live/wp-content/uploads/2018/08/016-350x350.png"
+  }
+]
