@@ -1,5 +1,5 @@
 services:
-  zookeeper-server:
+  zookeeper-server: # zookeeper ayarları
     image: bitnami/zookeeper:latest
     container_name: zookeeper-server
     networks:
@@ -8,7 +8,7 @@ services:
       ALLOW_ANONYMOUS_LOGIN: "yes"
     restart: unless-stopped
 
-  kafka-server:
+  kafka-server: # kafka ayarları
     image: bitnami/kafka:latest
     container_name: kafka-server
     networks:
@@ -28,7 +28,7 @@ services:
       - zookeeper-server
     restart: unless-stopped
 
-  kafdrop:
+  kafdrop: # kafkayı tarayıcı üzerinden izlemek için kullanılıyor.
     image: obsidiandynamics/kafdrop:latest
     container_name: kafdrop
     networks:
@@ -37,12 +37,12 @@ services:
       KAFKA_BROKERCONNECT: "kafka-server:9092"
       SERVER_SERVLET_CONTEXTPATH: "/"
     ports:
-      - "9000:9000"
+      - "9000:9000" # kafdrop portu
     depends_on:
       - kafka-server
-    restart: unless-stopped
+    restart: unless-stopped # durmaz sürekli restart olur
 
-  scraper:
+  scraper: # scraper ayarları
     build:
       context: ./scraper
     container_name: scraper
@@ -53,7 +53,7 @@ services:
     command: >
           sh -c "sleep 30 && python /app/web_scraper.py"
 
-  consumer:
+  consumer: # consumer ayarları
     build:
       context: ./consumer
     container_name: consumer
@@ -66,15 +66,15 @@ services:
     command: >
       sh -c "sleep 30 && python /app/consumer.py"
 
-  api:
+  api: # api ayarları
     build: ./api
     ports:
-      - "5000:5000"
+      - "5000:5000" # api portu
     volumes:
       - ./api:/app
     restart: unless-stopped
-    stdin_open: true
-    tty: true
+    stdin_open: true # konteynerin içine veri girişi
+    tty: true # terminal veya komut satırı çıktısı
 
 networks:
   scrapping-project:

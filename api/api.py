@@ -4,6 +4,7 @@ import json
 app = Flask(__name__)
 
 
+# products.json içinden verileri döndürüyoruz.
 def load_products():
     try:
         with open('/app/data/products.json', 'r', encoding='utf-8') as f:
@@ -13,6 +14,7 @@ def load_products():
         return []
 
 
+# load_products() fonksiyonundan gelen verileri json formatında endpoint ile yolluyoruz.
 @app.route('/api/products', methods=['GET'])
 def get_products():
     products = load_products()
