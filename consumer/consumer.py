@@ -19,7 +19,7 @@ def consume_and_save():
         for message in consumer:
             products.append(message.value)
 
-            if len(products) % 10 == 0:
+            if len(products) % 16 == 0:
                 with open('/app/data/products.json', 'w') as f:
                     json.dump(products, f, indent=2)
 
