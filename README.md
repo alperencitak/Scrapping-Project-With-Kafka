@@ -13,3 +13,7 @@ Flask Framework
 ## CONTAINERS
 
 ![Image](https://github.com/user-attachments/assets/7cd97d73-d431-4f78-ade1-e413b1607447)
+
+## KAFDROP TOPIC
+
+![Image](https://github.com/user-attachments/assets/a4c047e2-fa17-4a17-9f2e-7237cb347281)
